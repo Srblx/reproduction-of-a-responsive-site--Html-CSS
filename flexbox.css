@@ -1,0 +1,319 @@
+@import url(//db.onlinewebfonts.com/c/7017698b5c5a2cc397cd3b0c0984d76f?family=U8);
+@font-face {
+    font-family: "U8";
+    src: url("//db.onlinewebfonts.com/t/7017698b5c5a2cc397cd3b0c0984d76f.eot");
+    src: url("//db.onlinewebfonts.com/t/7017698b5c5a2cc397cd3b0c0984d76f.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/7017698b5c5a2cc397cd3b0c0984d76f.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/7017698b5c5a2cc397cd3b0c0984d76f.woff") format("woff"), url("//db.onlinewebfonts.com/t/7017698b5c5a2cc397cd3b0c0984d76f.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/7017698b5c5a2cc397cd3b0c0984d76f.svg#U8") format("svg");
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    cursor: -webkit-image-set(url(../img/cursor@2x.png) 1x,
+    url(../img/cursor@2x.png) 2x) , auto !important;
+}
+
+  
+
+html{
+    overflow: hidden; 
+}
+
+body {
+    height: 100vh;
+    background-color: rgb(255, 255, 255);
+    font-family: "U8";
+    font-size: 25px;
+    gap: 1rem;
+    color: rgb(0, 0, 0);
+    text-align: center;
+}
+main {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+main section {
+    border: 5px solid;
+    /* La propriété CSS flex-grow définit le facteur d'expansion d'un élément flexible selon sa dimension principale. 
+    Elle indique la quantité d'espace restant que l'élément devrait consommer dans un conteneur flexible relativement à la taille 
+    des autres éléments du même conteneur. */
+    flex-grow: 1;
+}
+
+section:nth-child(2) {
+    order: 1;
+}
+
+.info span {
+    visibility: collapse;
+}
+.txt p {
+    display: inline-block;
+}
+
+.txt span {
+    display: none;
+}
+
+@media screen and (min-width: 768px) {
+    main {
+        flex-direction: row;
+        /* La propriété flex-wrap indique si les éléments flexibles sont contraints
+         à être disposés sur une seule ligne ou s'ils peuvent être affichés sur plusieurs lignes 
+         avec un retour automatique. Si le retour à la ligne est autorisé, la propriété permet 
+         également de contrôler la direction dans laquelle les lignes sont empilées. */
+        flex-wrap: wrap;
+    }
+    section:nth-child(2){
+        order: 0;
+    }
+    section#header, section#footer{
+        height: 20%;
+    }
+    section {
+        /* La propriété flex-basis détermine la base de flexibilité utilisée comme taille initiale principale pour un 
+        élément flexible. Cette propriété détermine la taille de la boîte de contenu sauf si une autre boîte est visée 
+        par box-sizing. */
+        flex-basis: 50%;
+        height: 40%;
+    }
+    .logo {
+        width: 5rem;
+        height: 5rem;
+        border: 0.4rem solid black ;
+        background-color: transparent;
+        display: flex;
+        /* La propriété flex-direction définit la façon dont les éléments flexibles sont placés dans un conteneur flexible :
+         elle définit l'axe principal et la direction des éléments (normale ou inversée). */
+        flex-direction: column;
+        justify-content: space-around;
+    }
+    .logo, .txt {
+        margin: 2vh;
+    }
+    .reseau, .info {
+        margin-top: 4%;
+        margin-left: 2%;
+        margin-right: 2%;
+    }
+    
+    .ligne1, 
+    .ligne2,
+    .ligne3 {
+        margin: 10%;
+        width: 3.5rem;
+        height: 0.5rem;
+        background-color: black;
+        -webkit-transition: all 0.5s;
+        -moz-transition: all 0.5s;
+        -o-transition: all 0.5s;
+        transition: all 0.5s;
+        
+    }
+    
+    .logo:hover .ligne1 {
+        transform: translateY(20px);
+        transition: 0.5s ease-in-out;
+    }
+    
+    .logo:hover .ligne3 {
+        visibility: hidden;
+        transition: 0s; 
+    }
+    
+    .logo:hover .ligne2 { 
+        transform: rotate(90deg);
+        transition: 0.5s ease-in-out;
+    }
+
+    #footer {
+        display: flex;
+        justify-content: space-between;
+        text-align: right;
+    }
+    .info span {
+        visibility: inherit;
+    }
+    #header {
+        display: flex;
+        justify-content: space-between;
+        text-align: right;
+    }
+    .txt span {
+        visibility: inherit;
+        text-align: right;
+    }
+    
+}
+
+.space {
+    background-color: #C3A5F5;
+    height: 100%; 
+}
+
+.member {
+    background-color:#FFA9AF;
+    height: 100%; 
+}
+
+.membership {
+    background-color: #FFE000;
+    height: 100%; 
+}
+
+.contact {
+    background-color: #3CC8AA; 
+    height: 100%;  
+}
+.contact p {
+    
+}
+.space:hover > p,
+.member:hover > p,
+.membership:hover > p, 
+.contact:hover > p {
+    transform: scale(1.9);
+}
+section p {
+    transition: all 0.6s;
+}
+
+::selection {
+    background-color: gray;
+}
+
+a {
+    display: inline-block;
+    color: #000;
+    text-decoration: none;
+}
+
+#work::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 4px;
+    background: #C3A5F5;
+    transition: width 0.3s;
+    
+
+}
+#work:hover::after {
+    width: 100%;
+    transform: scaleX(1);
+    animation: slide 1s cubic-bezier(0.5, -3, 0.5, 1.6) ;
+}
+
+@keyframes slide {
+    0% {
+        width:0;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+.us::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 4px;
+    background: #3CC8AA;
+    transition: width 0.3s;
+}
+.us:hover::after {
+    width: 100%;
+    transition:  left to right 0.5s;
+    transition: all 1s cubic-bezier(0.5, -3, 0.5, 2);
+    transform: scaleX(1);
+    transform-origin: left top ;
+}
+
+.spot::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 4px;
+    background: #FFE000;
+    transition: width 0.3s;
+}
+.spot:hover::after {
+    width: 100%;
+    transition:  left to right 0.5s;
+    transition: all 1s cubic-bezier(0.5, -3, 0.5, 2);
+    transform: scaleX(1);
+    transform-origin: left top ;
+}
+
+#fb::after {
+    content: '';
+    /* La propriété display définit le type d'affichage utilisée pour le rendu d'un élément (de bloc ou en ligne)
+     et la disposition utilisée pour ses éléments fils : grille ou boîtes flexibles. */
+    display: block;
+    width: 0;
+    height: 4px;
+    background: blue;
+    transition: width 0.3s;
+}
+#fb:hover::after {
+    width: 100%;
+    transition:  left to right 0.5s;
+    transition: all 1s cubic-bezier(0.5, -3, 0.5, 2);
+    transform: scaleX(1);
+    transform-origin: left top ;
+}
+
+#tw::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 4px;
+    background: #00ccff;
+    transition: width 0.3s;
+}
+#tw:hover::after {
+    width: 100%;
+    transition:  left to right 0.5s;
+    transition: all 1s cubic-bezier(0.5, -3, 0.5, 2);
+    /* La propriété transform modifie l'espace de coordonnées utilisé pour la mise en forme visuelle. Grâce à cette propriété, 
+    il est possible de translater les éléments, de les tourner, d'appliquer des homothéties, de les distordre pour en changer 
+    la perspective. */
+    transform: scaleX(1);
+    transform-origin: left top ;
+}
+
+#ig::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 4px;
+    background: linear-gradient(90deg, yellow 30%, rgb(249, 4, 249), rgb(255, 4, 46));
+    transition: width 0.3s;
+}
+#ig:hover::after {
+    width: 100%;
+    transition:  left to right 0.5s;
+    /* La propriété transition est une propriété raccourcie pour les propriétés transition-property, transition-duration, 
+    transition-timing-function et transition-delay. */
+    transition: all 1s cubic-bezier(0.5, -3, 0.5, 2);
+    transform: scaleX(1);
+    /* La propriété transform-origin permet de modifier l'origine du repère pour les opérations de transformation d'un élément. */
+    transform-origin: left top ;
+}
+
+.membership p, 
+.space p,
+.member p,
+.contact p  {
+    /* La propriété CSS position définit la façon dont un élément est positionné dans un document. 
+    Les propriétés top, right, bottom et left déterminent l'emplacement final de l'élément positionné. */
+    position: relative;
+    top : 50%
+}
+
+
+
+
+
